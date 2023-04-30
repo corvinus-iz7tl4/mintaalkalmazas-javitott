@@ -6,7 +6,8 @@ header("Content-type: text/html; charset=utf-8");
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="../css/style.css">
     <title>Bejelentkezés</title>
 </head>
 
@@ -15,7 +16,7 @@ header("Content-type: text/html; charset=utf-8");
         <form method="post" action="checkLogin.php" onSubmit="return blankcheck()" name="submit">
             <h2>Bejelentkezés</h2>
             <label for="emailc">E-mail cím*</label><br>
-            <input type="text" name="email" id="emailc" size="35"><br>
+            <input type="email" name="email" id="emailc" size="35"><br>
             <label for="pw">Jelszó*</label><br>
             <input type="password" name="password" id="pw" size="35"><br>
             <input type="submit" value="Bejelentkezés" name="submit">
