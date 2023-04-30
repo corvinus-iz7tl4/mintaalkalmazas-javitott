@@ -2,11 +2,14 @@
 if (isset($_POST["submit"])) {
     require_once("connect.php");
     $email = $_POST["email"];
-    $password = $_POST["password"];
+    $password = sha1($_POST["password"]);
+
+    $cleared_email = mysqli_real_escape_string($kapcsolat, $email);
+    $cleared_password = mysqli_real_escape_string($kapcsolat, $password);
 
     mysqli_set_charset($kapcsolat, "utf-8");
 
-    $query = "SELECT * FROM paciens WHERE email='$email' AND jelszo='$password'";
+    $query = "SELECT * FROM paciens WHERE email='$cleared_email' AND jelszo='$cleared_password'";
     $result = mysqli_query($kapcsolat, $query);
     $paciens = mysqli_fetch_assoc($result);
 
