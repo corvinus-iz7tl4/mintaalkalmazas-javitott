@@ -16,7 +16,7 @@ header("Content-type: text/html; charset=utf-8");
 </head>
 
 <body>
-    <nav>
+    <nav> 
         <ul>
             <li><a href="dashboard.php">DASHBOARD</a></li>
             <li><a href="adatok.php">Adatok</a></li>
@@ -24,7 +24,7 @@ header("Content-type: text/html; charset=utf-8");
             <li><a id="active" href="#">Gyógyszerek</a></li>
             <li><a href='logout.php'>Kijelentkezés</a></li>
         </ul>
-    </nav>
+    </nav> 
 
     <div>
         <h3>KERESÉS</h3>
@@ -32,15 +32,18 @@ header("Content-type: text/html; charset=utf-8");
             <input type="text" name="search" id="search">
             <input type="submit" value="Keresés" name="search_btn">
         </form>
-        <?php
+        <?php 
         require_once("connect.php");
         if (isset($_POST["search_btn"])) {
             $gyogyszer = $_POST["search"];
 
             $cleared_gyogyszer = mysqli_real_escape_string($kapcsolat, $gyogyszer);
 
-            $query = "SELECT * FROM gyogyszer WHERE nev LIKE '%$cleared_gyogyszer'";
-            $result = mysqli_query($kapcsolat, $query);
+            $query = "SELECT * FROM gyogyszer WHERE nev LIKE CONCAT('%',?,'%')";
+            $stmt = $kapcsolat->prepare($query);
+            $stmt->bind_param("s", $cleared_gyogyszer);
+            $stmt->execute();
+            $result = $stmt->get_result();
 
             if (mysqli_num_rows($result) > 0) {
                 while ($results = mysqli_fetch_array($result)) {
