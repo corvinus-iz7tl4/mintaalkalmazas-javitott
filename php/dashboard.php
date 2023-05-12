@@ -16,13 +16,13 @@ header("Content-type: text/html; charset=utf-8");
 </head>
 
 <body>
-    <nav>
+    <nav class="navbar">
         <ul>
-            <li><a href="#">DASHBOARD</a></li>
+            <li><a href="#" class="active dashboard-btn">DASHBOARD</a></li>
             <li><a href="adatok.php">Adatok</a></li>
             <li><a href="vizsgalatok.php">Vizsgálatok</a></li>
             <li><a href="gyogyszerek.php">Gyógyszerek</a></li>
-            <li><a href='logout.php'>Kijelentkezés</a></li>
+            <li><a href='logout.php' class="logout-btn">Kijelentkezés</a></li>
         </ul>
     </nav>
     <div>
