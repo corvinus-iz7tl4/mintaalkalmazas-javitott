@@ -1,9 +1,144 @@
-a{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #a1c7d3;
+}
+
+a {
     color: black;
     text-decoration: none;
 }
 
-a#active{
+a#active {
     color: green;
     font-weight: bold;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-form {
+    width: 400px;
+    background-color: #a1e1e6;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.login-form label {
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-bottom: 3px;
+    margin-top: 8px;
+}
+
+.login-form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #1e81b0;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.login-form input[type="submit"]:hover {
+    background-color: #063970;
+}
+
+.login-form #errorMsg {
+    color: red;
+    margin-top: 16px;
+}
+
+/* Navigation bar styles */
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar li a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.navbar li a:hover {
+    background-color: #555;
+}
+
+.navbar .active {
+    background-color: #4CAF50;
+}
+
+/* Responsive navigation bar */
+@media screen and (max-width: 600px) {
+    .navbar li {
+        float: none;
+    }
+
+    .navbar li a {
+        display: block;
+        text-align: left;
+    }
+}
+
+/* Logout and main menu buttons */
+.logout-btn,
+.dashboard-btn {
+    display: inline-block;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover,
+.dashboard-btn:hover {
+    background-color: #df362d;
 }
