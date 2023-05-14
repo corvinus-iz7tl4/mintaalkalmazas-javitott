@@ -12,6 +12,7 @@ header("Content-type: text/html; charset=utf-8");
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../css/képek/favicon.png" type="image/x-icon">
     <title>Adatok</title>
 </head>
 
