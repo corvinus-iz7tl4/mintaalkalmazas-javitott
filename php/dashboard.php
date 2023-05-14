@@ -17,103 +17,97 @@ header("Content-type: text/html; charset=utf-8");
 </head>
 
 <body>
-    <nav class="navbar">
+    <nav class="nav-bar">
         <ul>
-            <li><a href="#" class="active dashboard-btn">DASHBOARD</a></li>
-            <li><a href="adatok.php">Adatok</a></li>
-            <li><a href="vizsgalatok.php">Vizsgálatok</a></li>
-            <li><a href="gyogyszerek.php">Gyógyszerek</a></li>
+            <li><a href="#" class="nav-item active">DASHBOARD</a></li>
+            <li><a href="adatok.php" class="nav-item">Adatok</a></li>
+            <li><a href="vizsgalatok.php" class="nav-item">Vizsgálatok</a></li>
+            <li><a href="gyogyszerek.php" class="nav-item">Gyógyszerek</a></li>
             <li><a href='logout.php' class="logout-btn">Kijelentkezés</a></li>
         </ul>
     </nav>
-    <div>
-        <a href="adatok.php">
-            <div>
-                <table>
-                    <tr>
-                        <td colspan="2">ADATOK</td>
-                    </tr>
-                    <tr>
-                        <td>Név:</td>
-                        <td><?php echo $_SESSION['paciens_nev'] ?></td>
-                    </tr>
-                    <tr>
-                        <td>Születési idő:</td>
-                        <td><?php echo $_SESSION['paciens_szul_ido'] ?></td>
-                    </tr>
-                    <tr>
-                        <td>Személyi szám:</td>
-                        <td><?php echo $_SESSION['paciens_szemelyi'] ?></td>
-                    </tr>
-                    <tr>
-                        <td>TAJ szám:</td>
-                        <td><?php echo  $_SESSION['paciens_tajSzam'] ?></td>
-                    </tr>
-                    <tr>
-                        <td>Kezelő orvos:</td>
-                        <td><?php echo $_SESSION['paciens_nev'] ?></td>
-                    </tr>
-                </table>
-            </div>
-        </a>
-        <a href="vizsgalatok.php">
-            <div>
-                <table>
-                    <tr>
-                        <td colspan="2">VIZSGÁLATOK</td>
-                    </tr>
-                    <tr>
-                        <td>Név:</td>
-                        <td><?php echo $_SESSION['paciens_nev'] ?></td>
-                    </tr>
-                    <tr>
-                        <td>Születési idő:</td>
-                        <td><?php echo $_SESSION['paciens_szul_ido'] ?></td>
-                    </tr>
-                    <tr>
-                        <td>Személyi szám:</td>
-                        <td><?php echo $_SESSION['paciens_szemelyi'] ?></td>
-                    </tr>
-                    <tr>
-                        <td>TAJ szám:</td>
-                        <td><?php echo  $_SESSION['paciens_tajSzam'] ?></td>
-                    </tr>
-                    <tr>
-                        <td>Kezelő orvos:</td>
-                        <td><?php echo $_SESSION['paciens_nev'] ?></td>
-                    </tr>
-                </table>
-            </div>
-        </a>
-        <a href="gyogyszerek.php">
-            <div>
-                <table>
-                    <tr>
-                        <td colspan="2">GYÓGYSZEREK</td>
-                    </tr>
-                    <tr>
-                        <td>Név:</td>
-                        <td><?php echo $_SESSION['paciens_nev'] ?></td>
-                    </tr>
-                    <tr>
-                        <td>Születési idő:</td>
-                        <td><?php echo $_SESSION['paciens_szul_ido'] ?></td>
-                    </tr>
-                    <tr>
-                        <td>Személyi szám:</td>
-                        <td><?php echo $_SESSION['paciens_szemelyi'] ?></td>
-                    </tr>
-                    <tr>
-                        <td>TAJ szám:</td>
-                        <td><?php echo  $_SESSION['paciens_tajSzam'] ?></td>
-                    </tr>
-                    <tr>
-                        <td>Kezelő orvos:</td>
-                        <td><?php echo $_SESSION['paciens_nev'] ?></td>
-                    </tr>
-                </table>
-            </div>
-        </a>
+    <div class="dashboard">
+        <div class="group">
+            <table>
+                <tr>
+                    <td colspan="2">ADATOK</td>
+                </tr>
+                <tr>
+                    <td>Név:</td>
+                    <td><?php echo $_SESSION['paciens_nev'] ?></td>
+                </tr>
+                <tr>
+                    <td>Születési idő:</td>
+                    <td><?php echo $_SESSION['paciens_szul_ido'] ?></td>
+                </tr>
+                <tr>
+                    <td>Személyi szám:</td>
+                    <td><?php echo $_SESSION['paciens_szemelyi'] ?></td>
+                </tr>
+                <tr>
+                    <td>TAJ szám:</td>
+                    <td><?php echo  $_SESSION['paciens_tajSzam'] ?></td>
+                </tr>
+                <tr>
+                    <td>Kezelő orvos:</td>
+                    <td><?php echo $_SESSION['paciens_nev'] ?></td>
+                </tr>
+            </table>
+        </div>
+        <div class="group">
+            <table>
+                <tr>
+                    <td colspan="2">VIZSGÁLATOK</td>
+                </tr>
+                <tr>
+                    <td>Név:</td>
+                    <td><?php echo $_SESSION['paciens_nev'] ?></td>
+                </tr>
+                <tr>
+                    <td>Születési idő:</td>
+                    <td><?php echo $_SESSION['paciens_szul_ido'] ?></td>
+                </tr>
+                <tr>
+                    <td>Személyi szám:</td>
+                    <td><?php echo $_SESSION['paciens_szemelyi'] ?></td>
+                </tr>
+                <tr>
+                    <td>TAJ szám:</td>
+                    <td><?php echo  $_SESSION['paciens_tajSzam'] ?></td>
+                </tr>
+                <tr>
+                    <td>Kezelő orvos:</td>
+                    <td><?php echo $_SESSION['paciens_nev'] ?></td>
+                </tr>
+            </table>
+        </div>
+        <div class="group">
+            <table>
+                <tr>
+                    <td colspan="2">GYÓGYSZEREK</td>
+                </tr>
+                <tr>
+                    <td>Név:</td>
+                    <td><?php echo $_SESSION['paciens_nev'] ?></td>
+                </tr>
+                <tr>
+                    <td>Születési idő:</td>
+                    <td><?php echo $_SESSION['paciens_szul_ido'] ?></td>
+                </tr>
+                <tr>
+                    <td>Személyi szám:</td>
+                    <td><?php echo $_SESSION['paciens_szemelyi'] ?></td>
+                </tr>
+                <tr>
+                    <td>TAJ szám:</td>
+                    <td><?php echo  $_SESSION['paciens_tajSzam'] ?></td>
+                </tr>
+                <tr>
+                    <td>Kezelő orvos:</td>
+                    <td><?php echo $_SESSION['paciens_nev'] ?></td>
+                </tr>
+            </table>
+        </div>
     </div>
 </body>
 
