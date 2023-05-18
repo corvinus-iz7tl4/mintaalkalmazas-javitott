@@ -20,9 +20,13 @@ header("Content-type: text/html; charset=utf-8");
         } else {
             //print "Sikerült csatlakozni <br>";
         }
+        mysqli_query($kapcsolat,"SET character_set_results=utf8");
+        mb_language("uni");
+        mb_internal_encoding("UTF-8");
         mysqli_select_db($kapcsolat, $adatbazis)
             or die("Nem lehet megnyitni a következő adatbázist: $adatbazis" . mysqli_error($mysqli));
         //print "Sikeresen kiválasztott adatbázis: " . $adatbazis . "<br>";
+        mysqli_query($kapcsolat,"SET names 'utf8");
         ?>
     </h1>
 </body>
