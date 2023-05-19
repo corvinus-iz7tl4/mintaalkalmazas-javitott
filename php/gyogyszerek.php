@@ -45,9 +45,9 @@ header("Content-type: text/html; charset=utf-8");
             <h3>Gyógyszerek</h3>
             <div class="box-gyogyszer">
                 <h4>Keresés</h4>
-                <form action="gyogyszerek.php" method="get">
+                <form action="gyogyszerek.php" method="post">
                     <input type="text" name="search" id="search"><br>
-                    <input type="submit" value="Keresés">
+                    <input type="submit" value="Keresés" name="search_btn">
                 </form>
             </div>
             <div class="box-gyogyszer box2">
@@ -65,9 +65,9 @@ header("Content-type: text/html; charset=utf-8");
                     $result = $stmt->get_result();
 
                     if (mysqli_num_rows($result) > 0) {
-                        for ($i = 0; $i < mysqli_num_rows($result); $i++) {
-                            print "<table>";
+                         print "<table>";
                             print "<tr><th colspan='2'> GYÓGYSZER ADATAI </th></tr>";
+                        while ($gyogyszerResult=mysqli_fetch_array($result)) {
                             print "<tr><td>Név:</td><td>";
                             echo $gyogyszerResult['nev'];
                             print "</td></tr><tr><td>Adagolás:</td><td>";
@@ -80,9 +80,9 @@ header("Content-type: text/html; charset=utf-8");
                             }
                             print "</td></tr><tr><td>Betegség:</td><td>";
                             echo $gyogyszerResult['betegseg'];
-                            print "</td></tr></table>";
-                            $i++;
+                            print "</td></tr><hr>";
                         }
+                        print "</table>";
                     } else {
                         echo "nincs találat";
                     }

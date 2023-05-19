@@ -197,6 +197,18 @@ span {
     height: 70%;
 }
 
+.box2 table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+}
+
+.box th,
+.box td {
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
 /* Responsive styles */
 @media only screen and (max-width: 768px) {
 
